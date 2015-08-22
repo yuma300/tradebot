@@ -25,8 +25,12 @@ module.exports = (robot) ->
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #
-  # robot.respond /lulz/i, (res) ->
-  #   res.send res.random lulz
+  robot.respond /lulz/i, (res) ->
+    console.log("call lulz");
+    Strategy = require("./strategy");
+    str = new Strategy();
+    str.execute();
+      
   #
   # robot.topic (res) ->
   #   res.send "#{res.message.text}? That's a Paddlin'"
